@@ -22,6 +22,8 @@ public:
 	int getSize();
 	void set(int position, const Type& value);
 	Type get(int position);
+    int indexOf(Type searchValue);
+    int nextIndexOf(int startingIndex, Type search Value);
 };
 
 #endif /* MODEL_CTECARRAY_H_ */
