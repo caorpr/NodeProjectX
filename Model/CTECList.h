@@ -17,6 +17,10 @@ private:
 	ArrayNode<Type> *end;
 	ArrayNode<int> * head;  //....got rid of errors.....?
 	int size;
+    void swap(int indexOne, int indexTwo);
+    void calulateSize();
+    
+
 	void calculateSize();
 public:
 	~CTECList();
@@ -33,6 +37,7 @@ public:
 	Type removeFromIndex(int index);
 	Type set(int index, const Type& value);
 	int indexOf(Type searchValue);
+    void selectionSort();
 };
 
 void calculateSize();
