@@ -7,6 +7,7 @@
 
 #include "NodeController.h"
 #include <iostream>
+#include <stdlib.h> //This gives you access to the rand() function (gives a random number).
 
 using namespace std;
 
@@ -48,3 +49,39 @@ void NodeController :: start()
 	arrayTimer.displayTimerInformation();
 }
 
+void NodeController::sortData()
+{
+    /*
+     Create a CTECList, CTECArray
+     Fill them with random numbers
+     Start a timer, sort, stop timer isplay info for list
+     Start a timer, sort, stop timer, display info for array
+     */
+    
+    CTECArray<int> randomNumberArray(50000);
+    CTECList<int> randomNumberList;
+    int myCPlusPlusArray[50000];
+    
+    for(int spot = 0; spot < 50000; spot++)
+    {
+        int myRandom = rand();
+        randomNumberArray.set(spot, myRandom);
+        randomNumberList.addToEnd(myRandom);
+        myCPlusPlusArray[spot] = myRandom;
+    }
+    Timer sortTimer;
+    sortTimer.startTimer();
+    randomNumberArray.selectionSort();
+    sortTimer.stopTimer();
+    sortTimer.displayTimerInformation();
+    
+    sortTimer.resetTimer();
+    
+    sortTimer.startTimer();
+    std::sort(std::begin(myCPlusPlusArray), std::end(myCPlusPlusArray));
+    sortTimer.stopTimer();
+    sortTimer.displayTimerInformation();
+    
+    sortTimer.resetTimer();
+    
+}
