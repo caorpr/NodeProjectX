@@ -47,3 +47,6 @@ void ArrayNode<Type> :: setNext(ArrayNode<Type> * next)
 {
 	this->next = next;
 }
+
+
+
