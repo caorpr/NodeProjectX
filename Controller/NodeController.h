@@ -27,6 +27,11 @@ private:
 	void testLists();
     void sortData();
     
+    int * mergeData;
+    void doMergesort();
+    void mergesort(int data [], int size);
+    void merge(int data  [], int sizeOne, int sizeTwo);
+    
 public:
 	NodeController();
 	virtual ~NodeController();

@@ -15,7 +15,7 @@ class CTECList
 {
 private:
 	ArrayNode<Type> *end;
-	ArrayNode<int> * head;  //....got rid of errors.....?
+	ArrayNode<int>  *head;  //....got rid of errors.....?
 	int size;
     void swap(int indexOne, int indexTwo);
     void calulateSize();
