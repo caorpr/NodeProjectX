@@ -178,6 +178,8 @@ void NodeController::quicksort(int first, int last)
         quicksort(pivotIndex+1, last);
     }
 }
+
+
 int NodeController::partition(int first, int last)
 {
     int pivot;
