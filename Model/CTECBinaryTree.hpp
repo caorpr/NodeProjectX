@@ -15,64 +15,32 @@
 
 
 
-template <class Type>
-void CTECBinaryTree<Type> :: preorderTraversal(TreeNode<Type> * currentNode)
-{
-    if(currentNode != nullptr)
-    {
-        cout <<currentNode->getValue() << " " ;
-        preorderTraversal(currentNode->getLeftChd());
-        preorderTraversal(currentNode->getRightChild());
-    }
-}
-
-template <class Type>
-void CTECBinaryTree<Type> :: inorderTraversal(TreeNode<Type> * currentNode)
-{
-    if(currentNode != nullptr)
-    {
-        preorderTraversal(currentNode->getLeftChd());
-        cout <<currentNode->getValue() << " " ;
-        preorderTraversal(currentNode->getRightChild());
-    }
-}
 
 
-template <class Type>
-void CTECBinaryTree<Type> :: postorderTraversal(TreeNode<Type> * currentNode)
+namespace CTECData
 {
-    if(currentNode != nullptr)
+    template <class Type>
+    class CTECBinaryTree
     {
-        
-        preorderTraversal(currentNode->getLeftChd());
-        preorderTraversal(currentNode->getRightChild());
-        cout <<currentNode->getValue() << " " ;
-    }
-    
-    
-template <class Type>
-    bool CTECBInarytree<Type> :: contains(Type value)
-    {
-        bool isInTree = false;
-        
-        if(root != nullptr)
-        {
-            if(root->getValue() == value)
-            {
-                isInTree = true;
-            }
-            else
-            {
-                if(value < root->getValue())
-                {
-                    isInTree = contains(value, root->getLeftChild());
-                }
-                else
-                {
-                    isInTree = contains(value, root->getRightChild());
-                }
-            }
-        }
-    }
-    return isInTree;
+    private:
+        int size;
+        TreeNode<Type> * root;
+        int height;
+        bool balanced;
+        void calculatedSize(TreeNode<Tyoe>  currentNode);
+        bool contains(Type value, CTECBinaryTree<Type> * currentTree);
+    public:
+        CTECBinaryTree();
+        ~CTECBinaryTree();
+        bool insert(const Type& value);
+        Type remove(const Type& value);
+        bool contains(Type value);
+        int getSize();
+        int getHeight();
+        bool isBalanced();
+        TreeNode<Type> * getRoot();
+        void preorderTraversal(TreeNode<Type> * currentNode);
+        void inorderTraversal(treeNode<Type> * currentNode);
+        void postorderTraversal(TreeNode<Type> * currentNode);
+    };
 }
