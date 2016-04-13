@@ -7,6 +7,8 @@
 //
 
 #include "CTECBinaryTree.hpp"
+using namespace CTECData;
+using namespace std;
 
 
 
@@ -20,7 +22,7 @@ CTECBinaryTree<Type> :: CTECBinaryTree()
 }
 
 template <class Type>
-int CTECBinaryTree<Type> getSize(()
+int CTECBinaryTree<Type> getSize())
 {
     size = 0;
     calculatedSize(root);
