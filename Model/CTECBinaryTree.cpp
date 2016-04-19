@@ -130,4 +130,52 @@ int CTECBinaryTree<Type> getSize())
     }
     return isInTre;
 }
-                                 
+
+
+
+template <class Type>
+bool CTECBinatyTree<Type> :: insert(const Type& value)
+{
+    if(contains(value))
+    {
+        return false;
+    }
+    else
+    {
+        TreeNode<Type> * currentNode = root;
+        TreeNode<Type> * trailNode;
+        
+        if(root = nullptr)
+        {
+            root = new TreeNode<Tpye>(value);
+        }
+        else
+        {
+            while (currentNode != nullptr)
+            {
+                trailNode = currentNode;
+                
+                if (currentNode->getValue() < value)
+                {
+                    currentNode = currentNode->getRightChild();
+                }
+                else
+                {
+                    currentNode = currentNode->getLeftChild();
+                }
+            }
+            if(trailNode->getValue() > value)
+            {
+                TreeNode<Type> * insertedNode = new TreeNode<Type>(value, trailNode);
+                trailNode->setLeftChild(insertedNode);
+            }
+            else
+            {
+                TreeNode<Type> * insertedNode = new TreeNode<Type>(value, trailNode);
+                trailNode->setRightChild(insertedNode);
+            }
+        }
+    }
+    return true;
+}
+    

@@ -27,7 +27,7 @@ namespace CTECData
         TreeNode<Type> * root;
         int height;
         bool balanced;
-        void calculatedSize(TreeNode<Tyoe>  currentNode);
+        void calculatedSize(TreeNode<Type>  currentNode);
         bool contains(Type value, CTECBinaryTree<Type> * currentTree);
     public:
         CTECBinaryTree();
