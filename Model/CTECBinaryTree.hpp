@@ -14,7 +14,7 @@
 #endif /* CTECBinaryTree_hpp */
 
 
-
+#include "TreeNode.hpp"
 
 
 namespace CTECData
@@ -29,6 +29,9 @@ namespace CTECData
         bool balanced;
         void calculatedSize(TreeNode<Type>  currentNode);
         bool contains(Type value, CTECBinaryTree<Type> * currentTree);
+        TreeNode<Type> * getRightMostChild(CtecBinaryTree<Type> leftSubTree);
+        TreeNode<Type> * getLeftMostChild(CtecBinaryTree<Type> rightSubTree);
+        
     public:
         CTECBinaryTree();
         ~CTECBinaryTree();
