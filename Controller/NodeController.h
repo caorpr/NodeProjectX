@@ -29,7 +29,7 @@ private:
     
     void swap(int first, int second);
     void quicksort(int first, int last);
-    void partition(int first, int last);
+    int partition(int first, int last);
     void doQuick();
     
     int * mergeData;

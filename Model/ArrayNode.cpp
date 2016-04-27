@@ -18,7 +18,7 @@ template <class Type>
 	ArrayNode<Type> :: ArrayNode(const Type& value) : Node<Type>(value)
 {
 	this->next = nullptr;
-	this->value = value;
+	this->setValue(value);
 }
 
 template <class Type>

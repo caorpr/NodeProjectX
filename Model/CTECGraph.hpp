@@ -8,8 +8,8 @@
 
 #ifndef CTECGraph_hpp
 #define CTECGraph_hpp
+#include <set>
 
-#include <stdio.h>
 
 
 namespace CTECData
@@ -19,9 +19,10 @@ namespace CTECData
     {
     private:
         static const int MAXIMUM = 20;
-        bool adjacencyMatx [MAXIMUM][MAXIMUM];
+        bool adjacencyMatrix [MAXIMUM][MAXIMUM];
         Type labels[MAXIMUM];
         int manyVertices;
+        void depthFirstTraversal(CTECGraph<Type> graph, int vertex, bool markedVertices[]);
     public:
         CTECGraph();
         ~CTECGraph();
@@ -33,8 +34,10 @@ namespace CTECData
         Type& operator [] (int vertex);
         Type operator [] (int vertex) const;
         int size();
-        bool isEdge(int source, int target);
-        std:set<int> neighbors(int vertex) const;
+        bool isEdge(int source, int target)const;
+        std::set<int> neighbors(int vertex) const;
+        void depthFirstTraversal(CTECGraph<Type> graph, int vertex);
+        void breadthFirstTraversal(CTECGraph<Type> graph, int vertex);
         
         
         

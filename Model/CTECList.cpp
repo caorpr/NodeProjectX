@@ -29,7 +29,7 @@ CTECList<Type>::CTECList()
 template<class Type>
 void CTECList<Type>::addToFront(const Type& value)
 {
-	ArrayNode<Type> * newStuff = new ArrayNode<Type>(value, head);
+    ArrayNode<Type> * newStuff = new ArrayNode<Type>(value, head);
 	head = newStuff;
 	if(size == 0)
 	{
