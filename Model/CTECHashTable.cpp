@@ -33,3 +33,28 @@ int CTECHashTable<Type> :: getSize()
 {
     return this->size;
 }
+
+
+template <class Type>
+void CTECHashTable<Type> :: add(const Type& value)
+{
+    if(!contains(value))
+    {
+        if(size/capacity >- this->efficiencyPercentage)
+        {
+            updateSize();
+        }
+        int insertionIndex = findPosition(value);
+        
+        if(internalStorage[insertionIndex] != nullptr)
+        {
+            while (internalStorage[insertionIndex] != nullptr)
+            {
+                insertionIndex = (insertionIndex + 1) % capacity;
+            }
+        }
+        internalStorage[insertionIndex] = value;
+        size++;
+        
+    }
+}
