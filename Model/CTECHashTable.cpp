@@ -1,0 +1,35 @@
+//
+//  CTECHashTable.cpp
+//  NodeProjectX
+//
+//  Created by Anderson, Clayton on 5/5/16.
+//  Copyright © 2016 Anderson, Clayton. All rights reserved.
+//
+
+#include <iostream>
+#include "CTECHashTable.hpp"
+
+using namespace CTECData;
+using namespace std;
+
+template <class Type>
+CTECHashTable<class Type> :: CTECHashTable()
+{
+    this->size = 0;
+    this->capacity = 101;
+    this->efficiencyPercentage = .667;
+    this->internalStorage = new Type[capacity];
+    
+}
+
+template <class Type>
+CTECHashTable<Type> :: ~CTECHashTable()
+{
+    delete [] internalStorage;
+}
+
+template <class Type>
+int CTECHashTable<Type> :: getSize()
+{
+    return this->size;
+}

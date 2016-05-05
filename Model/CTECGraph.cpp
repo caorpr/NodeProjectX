@@ -115,7 +115,7 @@ void CTECGraph<Type> :: depthFirstTraversal(CTECGraph<Type> currentGraph, int ve
     std::set<int>::iterator setIterator;
     
     markedVertices[vertex] = true;
-    cout << currentGraph[vertex] << endl;
+    cout << currentGraph[vertex] << ", " << endl;
     
     for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++)
     {
