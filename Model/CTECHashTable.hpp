@@ -34,9 +34,9 @@ namespace CTECData
         CTECHashTable();
         ~CTECHashTable();
         
-        void add(const Type& value);
-        bool remove(const Type& value);
-        bool contains(const Type& value);
+        void add(const Type & value);
+        bool remove(const Type & value);
+        bool contains(const Type & value);
         int getSize();
         
     };
