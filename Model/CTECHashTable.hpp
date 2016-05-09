@@ -28,6 +28,9 @@ namespace CTECData
         int findPosition(HashNode<Type> currentNode);
         int handleCollision(HashNode<Type> currentNode);
         void updateCapacity();
+        
+        int getNextPrime();
+        bool isPrime(int candidateNumber);
     public:
         CTECHashTable();
         ~CTECHashTable();
