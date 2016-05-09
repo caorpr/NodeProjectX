@@ -13,12 +13,12 @@ using namespace CTECData;
 using namespace std;
 
 template <class Type>
-CTECHashTable<class Type> :: CTECHashTable()
+CTECHashTable<Type> :: CTECHashTable()
 {
     this->size = 0;
     this->capacity = 101;
     this->efficiencyPercentage = .667;
-    this->internalStorage = new Type[capacity];
+    this->internalStorage = new HashNode<Type>[capacity];
     
 }
 
@@ -36,15 +36,15 @@ int CTECHashTable<Type> :: getSize()
 
 
 template <class Type>
-void CTECHashTable<Type> :: add(const Type& value)
+void CTECHashTable<Type> :: add(HashNode<Type> currentNode)
 {
-    if(!contains(value))
+    if(!contains(currentNode))
     {
         if(size/capacity >- this->efficiencyPercentage)
         {
-            updateSize();
+            updateCapacity();
         }
-        int insertionIndex = findPosition(value);
+        int insertionIndex = findPosition(currentNode);
         
         if(internalStorage[insertionIndex] != nullptr)
         {
@@ -53,8 +53,19 @@ void CTECHashTable<Type> :: add(const Type& value)
                 insertionIndex = (insertionIndex + 1) % capacity;
             }
         }
-        internalStorage[insertionIndex] = value;
+        internalStorage[insertionIndex] = currentNode;
         size++;
-        
     }
 }
+template <class Type>
+int CTECHashTable<Type> :: findPosition(HashNode<Type> currentNode)
+{
+    int position = 0;
+    
+    position = currentNode.getKey() % capacity;
+    
+    return position;
+}
+
+
+

@@ -24,7 +24,7 @@ namespace CTECData
     public:
         HashNode(int key, const Type& value);
         int getKey();
-        Type GetValue();
+        Type getValue();
     };
 }
 
