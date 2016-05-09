@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include "CTECHashTable.hpp"
-#include <CMap>
+#include <cmath>
 
 using namespace CTECData;
 using namespace std;
@@ -115,4 +115,76 @@ bool CTECHashTable<Type> :: isPrime(int candidateNumber)
     }
     
     return isPrime;
+}
+
+
+
+template <class Type>
+void CTECHashTable<Type> :: updateCapacity()
+{
+    int updatedCapacity = getNextPrime();
+    int oldCapacity = capacity;
+    capacity = updatedCapacity;
+    
+    HashNode<Type> * largerStorage = new HashNode<Type>[capacity];
+    
+    for(int index = 0; index < oldCapacity; index++)
+    {
+        if(internalStorage[index] != nullptr)
+        {
+            int updatedIndex = findPosition(internalStorage[index]);
+            largerStorage[updatedIndex] = internalStorage[index];
+            
+        }
+    }
+    
+    internalStorage = largerStorage;
+    
+}
+
+
+template <class Type>
+bool CTECHashTable<Type> :: contains(HashNode<Type> currentNode)
+{
+    bool isInTable = false;
+    int possibleLocation = findPosition(currentNode);
+    
+    
+    while(internalStorage[possibleLocation] != nullptr && isInTable)
+    {
+        if(internalStorage[possibleLocation].getValue() == currentNode.getValue())
+        {
+            isInTable true;
+        }
+        possibleLocation = (possibleLocation + 1) % capacity;
+    }
+    
+    
+    return isInTable;
+}
+
+
+
+template <class Type>
+bool CTECHashTable<Type> :: remove(HashNode<Type> currentNode)
+{
+    bool hasBeenRemoved = false;
+    if(contains(currentNode))
+    {
+        int possibleLocation = findPosition(currentNode);
+    
+    
+        while(internalStorage[possibleLocation] != nullptr && !hasBeenRemoved)
+        {
+            if(internalStorage[possibleLocation].getValue() == currentNode.getValue())
+            {
+                hasBeenRemoved = true;
+                internalStorage[possibleLocation] = nullptr;
+            }
+            possibleLocation = (possibleLocation + 1) % capacity;
+        }
+    }
+    
+    
+    return hasBeenRemoved;
 }
