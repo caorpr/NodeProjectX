@@ -158,6 +158,41 @@ bool CTECHashTable<Type> :: isPrime(int candidateNumber)
 
 
 template <class Type>
+void CTECHashTable<Type> :: updateChainedCapacity()
+{
+    int updatedChainedCapacity = getNextPrime();
+    int oldChainedCapacity = chainedCapacity;
+    chainedCapacity = updatedChainedCapacity;
+    
+    CTECList<HashNode<Type>> * largerChainedStorage = new CTECList<HashNode<Type>>[updatedChainedCapacity];
+    
+    for(int index = 0; index < oldChainedCapacity; index++)
+    {
+        if(chainedStorage[index] != nullptr)
+        {
+            CTECList<HashNode<Type>> temp = chainedStorage[index];
+            for(int innerIndex = 0; innerIndex < temp.getSize(); innerIndex++)
+            {
+                int updatedChainedPosition = findPosition(temp.getFromIndex(innerIndex));
+                if(largerChainedStorage[updatedChainedPosition] == nullptr)
+                {
+                    CTECList<HashNode<Type>> insertList;
+                    insertList.addEnd(temp.getFromIndex(innerIndex));
+                    largerChainedStorage[updatedChainedPosition] = insertList;
+                }
+                else
+                {
+                    largerChainedStorage[updatedChainedPosition].addEnd(temp.getFromIndex(innerIndex));
+                }
+            }
+        }
+    }
+}
+
+
+
+
+template <class Type>
 void CTECHashTable<Type> :: updateCapacity()
 {
     int updatedCapacity = getNextPrime();
