@@ -51,7 +51,7 @@ void CTECHashTable<Type> :: addChained(HashNode<Type> currentNode)
     int insertionIndex = findPosition(currentNode);
     
         //The spot is not empty.
-    if(chainedStorage[insertionIndex] != nullptr)
+    if(chainedSize[insertionIndex] != nullptr)
     {
         CTECList<HashNode<Type>> temp = chainedStorage[insertionIndex];
         temp.addEnd(currentNode);
@@ -60,7 +60,7 @@ void CTECHashTable<Type> :: addChained(HashNode<Type> currentNode)
     else //The spot is empty. Make a list and put in the array.
     {
         CTECList<HashNode<Type>> temp = chainedStorage[insertionIndex];
-        tempdEnd(currentNode);
+        temp.addEnd(currentNode);
         chainedStorage[insertionIndex] = tempList;
     }
     
