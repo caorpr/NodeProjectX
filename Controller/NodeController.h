@@ -37,6 +37,12 @@ private:
     void mergesort(int data [], int size);
     void merge(int data  [], int sizeOne, int sizeTwo);
     
+    void tryGraphs();
+    
+    void tryTree();
+    
+    void testHashTable();
+    
 public:
 	NodeController();
 	virtual ~NodeController();

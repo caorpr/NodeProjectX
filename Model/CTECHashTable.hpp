@@ -9,7 +9,7 @@
 #ifndef CTECHashTable_hpp
 #define CTECHashTable_hpp
 #include "HashNode.cpp"
-#include "CTECList.cpp"
+#include "CTECList.h"
 
 
 
@@ -23,13 +23,12 @@ namespace CTECData
     private:
         int size;
         int capacity;
-        //HashNode<Type> * internalStorage;
+        HashNode<Type> ** internalStorage;
         
         int chainedCapacity;
         int chainedSize;
-        CTECList<HashNode<Type>> * internalStorage;
+        CTECList<HashNode<Type>> * chainedStorage;
         void updateChainedCapacity();
-        void updateTableCapacity();
         
         double efficiencyPercentage;
         
