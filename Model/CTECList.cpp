@@ -40,11 +40,11 @@ void CTECList<Type>::addToFront(const Type& value)
 template<class Type>
 CTECList<Type>::~CTECList()
 {
-	ArrayNode<Type> * current = head;
+	ArrayNode<int> * current = head;
 
 	for(int deleteCount = 0; deleteCount < size; deleteCount++)
 	{
-		ArrayNode<Type> * temp = current;
+		ArrayNode<int> * temp = current;
 
 		current = current->getNext();
 		head = current;
@@ -53,7 +53,7 @@ CTECList<Type>::~CTECList()
 
 	while(current->getNext() != nullptr)
 	{
-		ArrayNode<Type> * temp = current;
+		ArrayNode<int> * temp = current;
 
 		current = current->getNext();
 		head = current;

@@ -13,6 +13,9 @@
 #include "../Model/CTECArray.cpp"
 #include "../Model/CTECList.cpp"
 #include "../Model/Timer.h"
+#include "../Model/CTECHashTable.cpp"
+#include "../Model/HashNode.hpp"
+
 #include <string>
 #include <iostream>
 

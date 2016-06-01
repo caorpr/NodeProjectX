@@ -156,9 +156,27 @@ void CTECGraph<Type> :: breadthFirstTraversal(CTECGraph<Type> currentGraph, int 
             }
         }
     }
-    
+}
+
+
+template <class Type>
+ CTECGraph<Type>::CTECGraph()
+{
+    manyVertices = 0;
+}
+
+
+
+
+template <class Type>
+CTECGraph<Type>::~CTECGraph()
+
+{
     
 }
+
+
+
 
 
 

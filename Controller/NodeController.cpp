@@ -217,7 +217,7 @@ void NodeController::testHashTable()
     {
         int randomValue = rand();
         int randomKey = rand();
-        HAshNode<int> temp = HashNode<int>(randomKey, randomValue);
+        HashNode<int> temp = HashNode<int>(randomKey, randomValue);
         tempTable.add(temp);
         tempArray[spot] = temp;
     }

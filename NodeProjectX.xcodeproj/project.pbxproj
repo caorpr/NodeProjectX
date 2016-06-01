@@ -50,8 +50,8 @@
 		3C2DEA1C1C9C78A000ECF515 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		3C6FEDAD1CDBC49D00F555AD /* CTECHashTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECHashTable.cpp; sourceTree = "<group>"; };
 		3C6FEDAE1CDBC49D00F555AD /* CTECHashTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CTECHashTable.hpp; sourceTree = "<group>"; };
-		3C928A9B1CE1069F00889A5D /* HashNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HashNode.cpp; path = Model/HashNode.cpp; sourceTree = "<group>"; };
-		3C928A9C1CE1069F00889A5D /* HashNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = HashNode.hpp; path = Model/HashNode.hpp; sourceTree = "<group>"; };
+		3C928A9B1CE1069F00889A5D /* HashNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashNode.cpp; sourceTree = "<group>"; };
+		3C928A9C1CE1069F00889A5D /* HashNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashNode.hpp; sourceTree = "<group>"; };
 		3CA5D32A1CBEC0F6009AB26F /* TreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
 		3CA5D32B1CBEC0F6009AB26F /* TreeNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TreeNode.hpp; sourceTree = "<group>"; };
 		3CA5D32D1CBEC11C009AB26F /* CTECBinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECBinaryTree.cpp; sourceTree = "<group>"; };
@@ -74,8 +74,6 @@
 		3C2DE9FB1C9C784800ECF515 = {
 			isa = PBXGroup;
 			children = (
-				3C928A9B1CE1069F00889A5D /* HashNode.cpp */,
-				3C928A9C1CE1069F00889A5D /* HashNode.hpp */,
 				3C2DEA0E1C9C78A000ECF515 /* Controller */,
 				3C2DEA121C9C78A000ECF515 /* Model */,
 				3C2DEA051C9C784800ECF515 /* Products */,
@@ -105,6 +103,8 @@
 			children = (
 				3C2DEA131C9C78A000ECF515 /* ArrayNode.cpp */,
 				3C2DEA141C9C78A000ECF515 /* ArrayNode.h */,
+				3C928A9B1CE1069F00889A5D /* HashNode.cpp */,
+				3C928A9C1CE1069F00889A5D /* HashNode.hpp */,
 				3C2DEA151C9C78A000ECF515 /* CTECArray.cpp */,
 				3C2DEA161C9C78A000ECF515 /* CTECArray.h */,
 				3C2DEA171C9C78A000ECF515 /* CTECList.cpp */,

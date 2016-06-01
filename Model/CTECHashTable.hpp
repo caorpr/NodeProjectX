@@ -42,6 +42,7 @@ namespace CTECData
         CTECHashTable();//
         ~CTECHashTable();//
         
+        
         void add(HashNode<Type> currentNode);//
         
         void addChained(HashNode<Type> currentNode);

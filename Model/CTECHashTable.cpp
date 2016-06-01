@@ -44,11 +44,13 @@ int CTECHashTable<Type> :: getSize()
 template <class Type>
 void CTECHashTable<Type> :: addChained(HashNode<Type> currentNode)
 {
-    if(chainedSize/chainedCapacity) >= efficiencyPercentage)
+    int insertionIndex = 0;
+    
+    if((chainedSize/chainedCapacity) >= efficiencyPercentage)
     {
         updateChainedCapacity();
     }
-    int insertionIndex = findPosition(currentNode);
+   insertionIndex = findPosition(currentNode);
     
         //The spot is not empty.
     if(chainedSize[insertionIndex] != nullptr)
@@ -61,7 +63,7 @@ void CTECHashTable<Type> :: addChained(HashNode<Type> currentNode)
     {
         CTECList<HashNode<Type>> temp = chainedStorage[insertionIndex];
         temp.addEnd(currentNode);
-        chainedStorage[insertionIndex] = tempList;
+        chainedStorage[insertionIndex] = temp;
     }
     
     chainedSize++;
@@ -84,7 +86,7 @@ void CTECHashTable<Type> :: add(HashNode<Type> currentNode)
         
         if(internalStorage[insertionIndex] != nullptr)
         {
-            insertionIndex = handleCollision(currentNode);
+            insertionIndex = handleCollision(currentNode);
             
             while (internalStorage[insertionIndex] != nullptr)
             {
@@ -142,7 +144,7 @@ bool CTECHashTable<Type> :: isPrime(int candidateNumber)
     }
     else
     {
-        for(int spot = 3; spot < sqrt(candidateNumber) % spot != 0; spot+= 2)
+        for(int spot = 3; spot < sqrt(candidateNumber) ; spot+= 2)
         {
             if(candidateNumber % spot == 0)
             {
@@ -199,7 +201,7 @@ void CTECHashTable<Type> :: updateCapacity()
     int oldCapacity = capacity;
     capacity = updatedCapacity;
     
-    HashNode<Type> * largerStorage = new HashNode<Type>[capacity];
+    HashNode<Type> ** largerStorage = new HashNode<Type>*[capacity];
     
     for(int index = 0; index < oldCapacity; index++)
     {
